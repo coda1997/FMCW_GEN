@@ -1,8 +1,8 @@
 import wave
 import numpy as np
 
-f_min = 20000
-framerate = 44100
+f_min = 17500
+framerate = 48000
 t = np.arange(0, 1, 1.0 / framerate)
 n = 5
 T = 1 / n  # 秒为单位
@@ -22,7 +22,7 @@ f_cos = np.cos(2 * np.pi * f_min * t_prim + np.pi * B * (t_prim ** 2) / T) * 100
 wave_data = f_cos.astype(np.short)
 # wave_data_right = f_right.astype(np.short)
 
-wave_file = wave.open('output/fmcw_high.wav', 'wb')
+wave_file = wave.open('output/fmcw_low.wav', 'wb')
 wave_file.setnchannels(1)
 wave_file.setsampwidth(2)
 wave_file.setframerate(framerate)
