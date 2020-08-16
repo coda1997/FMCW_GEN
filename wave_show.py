@@ -3,7 +3,7 @@ import matplotlib.pyplot as pl
 import numpy as np
 
 # 打开WAV文档
-f = wave.open('output/fmcw.wav', 'rb')
+f = wave.open('output/fmcw_low.wav', 'rb')
 
 # 读取格式信息
 # (nchannels, sampwidth, framerate, nframes, comptype, compname)
