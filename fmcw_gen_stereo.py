@@ -10,7 +10,7 @@ T = 1 / n  # 秒为单位
 k = np.arange(5)
 k = k.repeat(framerate / n)
 t_prim = t - k * T
-B = 1000  # Hz 带宽
+B = 2000  # Hz 带宽
 f_cos = np.cos(2 * np.pi * f_min * t_prim + np.pi * B * (t_prim ** 2) / T) * 10000  # 10000提升响度
 # f_cos is the 实数域数值大小 or wave_data
 # f_cos = wave_data = signal.chirp(t, f_min, 1, 1000, method='linear') * 10000
