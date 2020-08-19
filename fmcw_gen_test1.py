@@ -6,7 +6,7 @@ framerate = 48000
 t = np.arange(0, 1, 1.0 / framerate)
 n = 30
 T = 1 / n  # 秒为单位
-# from 0 to 4
+# from 0 to n-1
 k = np.arange(n)
 k = k.repeat(framerate / n)
 t_prim = t - k * T
@@ -28,7 +28,7 @@ wave_file.setsampwidth(2)
 wave_file.setframerate(framerate)
 print(type(wave_file))
 
-empty_data = np.zeros(shape=(20), dtype='short')
+empty_data = np.zeros(shape=(10), dtype='short')
 
 for i in range(0,1):
     wave_file.writeframes(wave_data.tobytes())
