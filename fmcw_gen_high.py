@@ -4,9 +4,9 @@ import numpy as np
 f_min = 20000
 framerate = 48000
 t = np.arange(0, 1, 1.0 / framerate)
-n = 5
+n = 30
 T = 1 / n  # 秒为单位
-# from 0 to 4
+# from 0 to n
 k = np.arange(n)
 k = k.repeat(framerate / n)
 t_prim = t - k * T
@@ -16,11 +16,7 @@ f_cos = np.cos(2 * np.pi * f_min * t_prim + np.pi * B * (t_prim ** 2) / T) * 100
 # f_cos = wave_data = signal.chirp(t, f_min, 1, 1000, method='linear') * 10000
 # chirp波
 
-# f_min_right = 19500
-# f_right = np.cos(2 * np.pi * f_min_right * t_prim + np.pi * B * (t_prim ** 2) / T) * 10000
-
 wave_data = f_cos.astype(np.short)
-# wave_data_right = f_right.astype(np.short)
 
 wave_file = wave.open('output/fmcw_high.wav', 'wb')
 wave_file.setnchannels(1)
@@ -31,9 +27,5 @@ print(type(wave_file))
 for i in range(0,10):
     wave_file.writeframes(wave_data.tobytes())
 
-
-# for l, r in zip(wave_data, wave_data_right):
-#     wave_file.writeframes(l.tobytes())
-#     wave_file.writeframes(r.tobytes())
 
 wave_file.close()
