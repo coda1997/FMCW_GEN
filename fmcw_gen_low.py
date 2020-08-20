@@ -2,7 +2,7 @@ import wave
 import numpy as np
 
 f_min = 17500
-framerate = 44100
+framerate = 48000
 t = np.arange(0, 1, 1.0 / framerate)
 n = 5
 T = 1 / n  # 秒为单位
