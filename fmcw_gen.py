@@ -29,9 +29,9 @@ if __name__ == "__main__":
     fmcw_low_freq = 17500
     fmcw_high_freq = 20500
     bandwidth = 1500
-    time = 10 # 10 seconds
-    periods = 30
-    framerate = 48000
+    time = 1000 # 1000 seconds
+    periods = 10
+    framerate = 44100
     fmcw_low_path = 'output/fmcw_low.wav'
     fmcw_high_path = 'output/fmcw_high.wav'
     _fmcw_gen(fmcw_low_freq, bandwidth, periods, framerate, time, fmcw_low_path)
